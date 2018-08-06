@@ -1,0 +1,5 @@
+- name: container con la tecnologia que queremos probar
+  docker_container:
+    image: "nombre:tag"
+    network_mode: host
+    state: started

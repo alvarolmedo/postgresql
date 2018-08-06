@@ -1,0 +1,16 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      become: true
+      changed_when: false
+
+    - name: install ntp to be able to test ntpq input
+      package: name=ntp state=present
+
+    - name: ntp should be running to be able to query with ntpq -p
+      service: name=ntpd state=started

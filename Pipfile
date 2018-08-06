@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+sphinxcontrib-restbuilder = "==0.1"
+"yaml2rst" = "*"
+pypandoc = "*"
+"yaml4rst" = "*"
+Sphinx = "*"
+molecule = "*"
+python-vagrant = "*"
+
+[requires]
+python_version = "2.7"
